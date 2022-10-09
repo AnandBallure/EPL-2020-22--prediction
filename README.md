@@ -25,12 +25,33 @@ Predicting win/draw/loss for the seasons 2020-21 and 2021-22
  - Logistic Regressor, SVM and XGBoost models were used.
  
  ## Model Results
- - Logistic Regressor results:
- F1_score  : 0.66/W | 0.32/D | 0.74/L
- Precision : 0.74/W | 0.37/D | 0.64/L
+ - *Logistic Regressor results*:
+ -- F1_score  : 0.66/W | 0.32/D | 0.74/L
+ -- Precision : 0.74/W | 0.37/D | 0.64/L
  
- ![] (
- - XGBoost outperforms among the three with a F1_score of 0.75/W, 0.36/D, 0.74/L and a Precision of 0.75/W, 0.48/D, 0.61/L.
+ ![](https://github.com/AnandBallure/EPL-2020-22--prediction/blob/main/LogisticRegressor-cmx.png)
+ 
+ - *SVM results*:
+ -- F1_score  : 0.70/W | 0/D | 0.65/L
+ -- Precision : 0.75/W | 0/D | 0.50/L
+ 
+ ![](https://github.com/AnandBallure/EPL-2020-22--prediction/blob/main/SVM-clr.png)
+ 
+ - *XGBoost results*:
+ -- F1_score  : 0.75/W | 0.36/D | 0.72/L
+ -- Precision : 0.75/W | 0.48/D | 0.61/L
+ 
+ ![](https://github.com/AnandBallure/EPL-2020-22--prediction/blob/main/XGBoost-cmx.png)
+ 
+ - XGBoost outperforms among the three with a F1_score of 0.75/W | 0.36/D | 0.74/L and a Precision of 0.75/W | 0.48/D | 0.61/L.
  - Clearly, the model has a hard time figuring out the correlations for the outcome "Draw".
 
- - 
+ ## Hyper-Parameter Tuning
+ - Using Sci-Kit Learn's Grid Search CV module, the parameters for XGBoost model are selected and then trained again to increase the precision.
+ -- F1_score  : 0.74/W | 0.38/D | 0.71/L
+ -- Precision : 0.76/W | 0.59/D | 0.61/L
+ 
+ ![](https://github.com/AnandBallure/EPL-2020-22--prediction/blob/main/XGBoost-Hyper-cmx.png)
+ 
+ ## Results 
+ - Given the complexity of the problem, the model performed pretty good with high *Precision* while dealing with multiple classes.
